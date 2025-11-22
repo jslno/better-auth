@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   mongodb:
     image: mongo:latest
@@ -8,7 +6,7 @@ services:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
-  
+
   # drizzle
   postgres:
     image: postgres:latest
@@ -33,7 +31,7 @@ services:
       - "5433:5432"
     volumes:
       - postgres-kysely_data:/var/lib/postgresql
-  
+
   postgres-kysely2:
     image: postgres:latest
     container_name: postgres-kysely2
@@ -72,7 +70,6 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
-
   mysql-kysely:
     image: mysql:latest
     container_name: mysql-kysely
@@ -99,7 +96,6 @@ services:
     volumes:
       - mysql-prisma_data:/var/lib/mysql
 
-
   mssql:
     image: mcr.microsoft.com/mssql/server:latest
     container_name: mssql
@@ -119,5 +115,5 @@ volumes:
   mysql_data:
   mssql_data:
   mysql-kysely_data:
-  mysql-prisma_data: 
+  mysql-prisma_data:
   postgres-kysely2_data:
